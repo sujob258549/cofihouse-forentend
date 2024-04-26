@@ -1,0 +1,20 @@
+.image {
+    background: url(https://img.freepik.com/free-photo/painting-mountain-lake-with-mountain-background_188544-9126.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.image2 {
+    background: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSljFDLphiv-NJFPm9P1pkbMZZC0tZ8XeLJd-GPRwvMkQ&s);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.image3 {
+    background: url(https://www.shutterstock.com/image-photo/beautiful-wooden-terrace-garden-furniture-600nw-1087490177.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}

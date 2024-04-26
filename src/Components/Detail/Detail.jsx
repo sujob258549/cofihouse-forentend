@@ -7,6 +7,7 @@ import Footer from "../Home/Footer";
 const Detail = () => {
 
     const detailcofi = useLoaderData();
+    console.log(detailcofi)
 
     return (
         <div>

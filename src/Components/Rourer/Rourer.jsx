@@ -7,6 +7,9 @@ import Addcafe from "../Addcofe/Addcafe";
 import PopularProduct from "../Home/PopularProduct";
 import Update from "../Update/Update";
 import Detail from "../Detail/Detail";
+import Login from "../Login/Login";
+import SignUp from "../SignUp/SignUp";
+import UseColoction from "../UserColection/UseColoction";
 
 const router = createBrowserRouter(
     [
@@ -33,9 +36,22 @@ const router = createBrowserRouter(
             element:<Addcafe></Addcafe>
         },
         {
+            path: '/login',
+            element:<Login></Login>
+        },
+        {
             path: '/detail/:id',
             element:<Detail></Detail>,
             loader: ({params})=> fetch(`http://localhost:5000/coffee/${params.id}`)
+        },
+        {
+            path: '/signup',
+            element:<SignUp></SignUp>,
+        },
+        {
+            path: '/users',
+            element:<UseColoction></UseColoction>,
+            loader: ()=>fetch('http://localhost:5000/users')
         },
         {
             path: '/update/:id',

@@ -1,9 +1,13 @@
 import { FaLeftLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../Home/Footer";
 import Swal from "sweetalert2";
 
+
 const Addcafe = () => {
+    const navigate = useNavigate();
+
+
     const handelSubmitCofi = e => {
         e.preventDefault();
         const name = e.target.name.value;
@@ -31,8 +35,9 @@ const Addcafe = () => {
                         icon: "success",
                         title: "Success...",
                         text: "user coffee create success",
-                        footer: '<a href="#">You add  success</a>'
-                      });
+                        footer: '<a href="/">You add  success</a>'
+                    });
+                    navigate('/');
 
                 }
             })

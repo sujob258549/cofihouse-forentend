@@ -6,6 +6,7 @@ import Swal from "sweetalert2";
 
 const Update = () => {
     const coffee = useLoaderData();
+    console.log(coffee)
 
     const handelSubmitUpdateCofi = e => {
         e.preventDefault();
@@ -45,11 +46,12 @@ const Update = () => {
 
     return (
         <div>
+            
             <div className="w-[90%] mx-auto">
                 <Link to={'/'} className='btn btn-outline  text-[#374151] mt-10 text-3xl font-rancho'><FaLeftLong className='mr-5'></FaLeftLong>Back to home</Link>
                 <div className="bg-[#F4F3F0] rounded-md mb-10 p-5 md:p-10 mt-10">
                     <div className=" w-full md:w-[70%] mx-auto text-center pb-10 ">
-                        <h1 className="text-5xl text-center text-[#374151] font-rancho">Update New Coffee</h1>
+                        <h1 className="text-5xl text-center text-[#374151] font-rancho" data-aos="fade-down">Update New Coffee</h1>
                         <p className="pt-5">It is a long established fact that a reader will be distraceted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using Content here.</p>
                     </div>
                     <div >

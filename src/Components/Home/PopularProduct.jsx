@@ -3,6 +3,7 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Swal from "sweetalert2";
+import 'animate.css';
 
 const PopularProduct = () => {
     const [coffees, setcoffees] = useState([]);
@@ -59,12 +60,12 @@ const PopularProduct = () => {
         <div className='  w-[90%] md:w-[80%] mx-auto py-10 md:py-20'>
             <p className="text-center">--- Sip & Savor --- </p>
             <h2 className="text-3xl md:text-5xl text-[#331A15] font-rancho text-center py-5">Our Popular Products</h2>
-            <Link to={'/addcoffe'} className="bg-yellow-600 flex gap-2 py-2 px-3 text-white text-2xl rounded-[4px] border border-black text-center font-rancho w-36 mx-auto">Add Coffee <span className="text-black items-end flex"><FaCoffee /></span></Link>
+            <Link to={'/addcoffe'} className="animate__backInRight animate__animated bg-yellow-600 flex gap-2 py-2 px-3 text-white text-2xl rounded-[4px] border border-black text-center font-rancho w-36 mx-auto">Add Coffee <span className="text-black items-end flex"><FaCoffee /></span></Link>
             <div className="grid grid-cols-1 md:grid-cols-2 py-10 gap-6">
 
                 {
                     coffees.map(coffee => (
-                        <div key={coffee._id}>
+                        <div data-aos="fade-down" key={coffee._id}>
                             <div className="bg-[#F5F4F1] flex gap-5 items-center py-12 px-10 rounded-md">
                                 <div className="w-[40%] end-0"><img className="w-full" src={coffee.photourl} alt="" /></div>
                                 <div className="w-[50%]">
@@ -74,16 +75,22 @@ const PopularProduct = () => {
                                 </div>
                                 <div className="w-[10%] flex md:flex-col flex-row ">
                                     <div className=" ">
-                                        <Link to={`/detail/${coffee._id}`}><button className=" hover:bg-slate-400 btn bg-[#D2B48C]">
-                                            < FaEye className=" text-white  md:text-xl"></FaEye>
-                                        </button>
+                                        <Link to={`/detail/${coffee._id}`}><div className="tooltip" data-tip="Detail">
+                                            <button className=" hover:bg-slate-400 btn bg-[#D2B48C]">
+                                                < FaEye className=" text-white  md:text-xl"></FaEye>
+                                            </button>
+                                        </div>
                                         </Link>
-                                        <Link to={`/update/${coffee._id}`} className=" hover:bg-slate-400 btn bg-[#000] my-3">
-                                            < FaPen className=" text-white  md:text-xl"></FaPen>
-                                        </Link>
-                                        <button onClick={() => handeldelate(coffee._id)} className="btn hover:bg-slate-400  bg-[#ea4744]">
-                                            < MdDelete className="  text-white md:text-xl"></MdDelete>
-                                        </button>
+                                        <div className="tooltip" data-tip="Update">
+                                            <Link to={`/update/${coffee._id}`} className=" hover:bg-slate-400 btn bg-[#000] my-3">
+                                                < FaPen className=" text-white  md:text-xl"></FaPen>
+                                            </Link>
+                                        </div>
+                                        <div className="tooltip" data-tip="Detete">
+                                            <Link  onClick={() => handeldelate(coffee._id)} className="btn hover:bg-slate-400  bg-[#ea4744]">
+                                                < MdDelete className="  text-white md:text-xl"></MdDelete>
+                                            </Link>
+                                        </div>
                                     </div>
 
                                 </div>
